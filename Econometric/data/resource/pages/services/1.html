@@ -16,6 +16,168 @@
     <link rel="stylesheet" href="../../../Assets/mod/modal.css" />
 
     <link rel="stylesheet" href="1.css" />
+    <style>
+      /* Estilos generales */
+      /* Contenedor padre para añadir perspectiva */
+      .container-3d {
+          perspective: 1000px; /* Define la profundidad del 3D */
+      }
+
+      /* Sección con transformaciones 3D */
+      .section-container {
+
+          display: flex;
+
+          flex-wrap: wrap;
+          width: 80%;
+          margin: auto;
+          background-color: #00518a;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: 9em;
+          transform-style: preserve-3d; /* Asegura que el hijo tenga el efecto 3D */
+          transform: rotateY(15deg) translateZ(30px); /* Efecto 3D de rotación e inclinación */
+          transition: transform 0.5s ease; /* Suaviza la transformación */
+      }
+
+      /* Efecto hover para incrementar el efecto 3D */
+      .section-container:hover {
+          transform: rotateY(25deg) translateZ(40px); /* Aumenta la rotación al pasar el ratón */
+      }
+
+
+      .left-column {
+          width: 20%;
+          background-color: white;
+          padding: 20px;
+          position: relative;
+      }
+
+      .left-column img {
+          display: block;
+          margin: 20px auto;
+          width: 50px;
+          height: 50px;
+      }
+
+      .line {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          bottom: 0;
+          width: 7px;
+          background-color: skyblue;
+      }
+
+      .circle {
+          top: 80%;
+          margin-left: 188px;
+          width: 50px;
+          height: 50px;
+          background-color: skyblue;
+          border-radius: 50%;
+      }
+
+      .right-column {
+          width: 80%;
+          padding: 20px;
+          background-color: #00518a;
+          color: white;
+      }
+
+      .experience {
+          margin-bottom: 20px;
+      }
+
+      .experience h2 {
+          color: wheat;
+      }
+
+      .experience h1 {
+          margin-top: 50px;
+          color: wheat;
+          font-size: 5vh; /* Tamaño basado en la altura del viewport */
+      }
+
+      .experience h3 {
+          font-size: 2.5vh; /* Ajusta este tamaño según necesites */
+      }
+
+      .experience p {
+          font-size: 2.8vh; /* Texto de los párrafos más pequeño */
+      }
+
+      /* Media queries para pantallas medianas */
+      @media (max-width: 1024px) {
+          .section-container {
+              width: 90%;
+          }
+          
+          .left-column {
+              width: 30%; /* Aumenta el tamaño de la columna en pantallas medianas */
+          }
+          
+          .right-column {
+              width: 70%;
+          }
+          
+          .experience h1 {
+              font-size: 4.5vh; /* Disminuye el tamaño del título */
+          }
+          
+          .experience p {
+              font-size: 2.5vh;
+          }
+      }
+
+      /* Media queries para pantallas pequeñas (tabletas y móviles) */
+      @media (max-width: 768px) {
+          .section-container {
+              flex-direction: column; /* Apila las columnas */
+              width: 100%; /* Se ajusta al 100% del ancho */
+          }
+          
+          .left-column, 
+          .right-column {
+              width: 100%; /* Cada columna ocupa el ancho completo */
+              padding: 10px;
+          }
+          
+          .experience h1 {
+              font-size: 4vh;
+          }
+          
+          .experience p {
+              font-size: 2vh;
+          }
+      }
+
+      /* Media queries para pantallas extra pequeñas (móviles pequeños) */
+      @media (max-width: 480px) {
+          .experience h1 {
+              font-size: 3vh;
+          }
+          
+          .experience p {
+              font-size: 1.8vh;
+          }
+          
+          .left-column img {
+              width: 40px;
+              height: 40px;
+          }
+          
+          .line {
+              width: 5px; /* Reduce el grosor de la línea en pantallas pequeñas */
+          }
+          
+          .circle {
+              width: 40px;
+              height: 40px;
+              margin-left: 140px;
+          }
+      }
+
+    </style>
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +197,7 @@
 
   <body>
     <!--Heater-->
-    <header id="header">
+    <header id="header" style="margin-bottom:50px;">
       <div class="container">
         <div class="logo">
           <a href="../../../../index.html"
@@ -80,87 +242,46 @@
     </header>
     <br />
 
-    <section class="experiences" id="experience">
-      <!--<img src="wave.svg" alt="división" class="wave" />-->
-      <div class="experiences-body">
-        <h2 class="experiences-title">Análisis Macroeconómico y Sectorial</h2>
-        <div class="experiences-grid">
-          <div class="empty">
-            <img src="../../../Assets/img/banner/banner-1.jpg" alt="">
-          </div>
-          <div class="line">
+    <div class="header-image">
+      <img src="../../../Assets/img/banner/1.jpg" alt="Banner Image" />
+    </div>    
+
+    <section class="section-container" id="experience" style="margin-top: 20px; background-color: white;">
+      <div class="left-column">
+        <img src="../../../Assets/img/icono-1(ciencias-aplicadas) (3).png" alt="Icon 1" style="width: 100%; height: auto;">
+        <div class="circle" ></div>
+        <img src="../../../Assets/img/icono-2(ciencias-aplicadas) (1).png" alt="Icon 1" style="width: 100%; height: auto;">
+        <div class="circle"></div>
+        <img src="../../../Assets/img/icono-4(ciencias-aplicadas) (1).png" alt="Icon 1" style="width: 100%; height: auto;">
+        <div class="circle" ></div>
+        <img src="../../../Assets/img/icono-5(ciencias-aplicadas) (1).png" alt="Icon 1" style="width: 100%; height: auto;">
+        <div class="circle" ></div>
+        <img src="../../../Assets/img/icono-6(ciencias-aplicadas) (1).png" alt="Icon 1" style="width: 100%; height: auto;">
+        <div class="line"></div>
+    </div>
+  
+      <div class="right-column">
+          <div class="experience">
+              <h1>Análisis Macroeconómico y Sectorial</h1>
+              <h3>Análisis de la coyuntura macroeconómica y perspectiva de mediano plazo de la economía boliviana.</h3>
           </div>
           <div class="experience">
-            <div class="experience-date">
-              Análisis de la coyuntura macroeconómica y perspectiva de mediano
-              plazo de la economía boliviana.
-            </div>
-            <div class="experience-company"></div>
-            <div class="experience-position"></div>
-            <div class="experience-description"></div>
+              <h1>Estimación del Índice de Confianza del Consumidor</h1>
+              <h3>Estimación de indicadores relevantes y análisis de confianza del consumidor.</h3>
           </div>
-          <div class="empty">
-            <img src="../../../Assets/img/banner/banner-1.jpg" alt="">
-          </div>
-          <div class="line"></div>
           <div class="experience">
-            <div class="experience-date">
-              Análisis de la evolución y perspectivas de la coyuntura económica
-              internacional y proyecciones de los escenarios más probables a
-              corto y mediano plazo para la economía boliviana.
-            </div>
-            <div class="experience-company"></div>
-            <div class="experience-position"></div>
-            <div class="experience-description"></div>
+              <h1>Estimación de Indicadores Líderes del Producto Interno Bruto</h1>
+              <h3>Estimación y análisis de indicadores del PIB y sus implicaciones económicas.</h3>
           </div>
-          <div class="empty">
-            <img src="../../../Assets/img/banner/banner-1.jpg" alt="">
-          </div>
-          <div class="line"></div>
           <div class="experience">
-            <div class="experience-date">Estimación del Índice de Confianza del Consumidor</div>
-            <div class="experience-company"></div>
-            <div class="experience-position"></div>
-            <div class="experience-description">
-            </div>
+              <h1>Estimación de Modelos Macroestructurales para Bolivia</h1>
+              <h3>Desarrollo de modelos macroeconómicos para la economía de Bolivia.</h3>
           </div>
-          <div class="empty">
-            <img src="../../../Assets/img/banner/banner-1.jpg" alt="">
-          </div>
-          <div class="line"></div>
           <div class="experience">
-            <div class="experience-date">Estimación de Indicadores Líderes del Producto Interno Bruto</div>
-            <div class="experience-company"></div>
-            <div class="experience-position"></div>
-            <div class="experience-description">
-            </div>
+              <h1>Análisis de Sectores Económicos Relevantes</h1>
+              <h3>Análisis y perspectivas de los sectores económicos más importantes.</h3>
           </div>
-          <div class="empty">
-            <img src="../../../Assets/img/banner/banner-1.jpg" alt="">
-          </div>
-          <div class="line"></div>
-          <div class="experience">
-            <div class="experience-date">Estimación de modelos Macroestructurales para la economía de Bolivia</div>
-            <div class="experience-company"></div>
-            <div class="experience-position"></div>
-            <div class="experience-description">
-            </div>
-          </div>
-          <div class="empty">
-            <img src="../../../Assets/img/banner/banner-1.jpg" alt="">
-          </div>
-          <div class="line2"></div>
-          <div class="experience">
-            <div class="experience-date">Análisis de la evolución y perspectivas de los sectores económicos más relevantes</div>
-            <div class="experience-company"></div>
-            <div class="experience-position"></div>
-            <div class="experience-description">
-            </div>
-          </div>
-          
-        </div>
       </div>
-      <!--<img src="wave.svg" alt="división" class="wave wave_bottom" />-->
     </section>
 
     <br />
